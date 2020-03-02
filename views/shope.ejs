@@ -1,0 +1,49 @@
+<%- include('fragment/head.ejs')%>
+<%- include('fragment/shopenav.ejs')%>
+    <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-5">Welcome</h1>
+      
+      <hr class="my-4">
+      <p>  <div class="container">
+        <div class="card-columns">
+          <% for(let item of prodList){%>
+
+          <div class="card">
+            <img src="/image/images.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%=item.title%></h5>
+              <p class="card-text">price $ <%=item.price%></p>
+              <p class="card-text">descrption: <%=item.description%></p>
+              <form action="" method="POST" > 
+                <input type="text" value= '<%=item.id%>' name="id" hidden>
+                <button class="btn btn-primary" type="submit" role="button">ADD TO CART </button>
+          
+              </form>
+            </div>
+            <br>
+            <br>
+            <img src="/image/images1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%=item.title%></h5>
+              <p class="card-text">price $ <%=item.price%></p>
+              <p class="card-text">descrption: <%=item.description%></p>
+            </div>
+            <p class="lead">
+              <form action="/admin/delete" method="POST" > 
+                <input type="text" value= '<%=item.id%>' name="id" hidden>
+                <button class="btn btn-primary" type="submit" role="button">ADD TO CART </button>
+          
+              </form>
+            </p>
+          </div>
+<%}%>
+
+        </div> 
+
+      
+    </div>
+  
+
+
+    <%- include('fragment/footer.ejs')%>
