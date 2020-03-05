@@ -15,7 +15,7 @@
               <h5 class="card-title"><%=item.title%></h5>
               <p class="card-text">price $ <%=item.price%></p>
               <p class="card-text">descrption: <%=item.description%></p>
-              <form action="" method="POST" > 
+              <form action="/add-tocart" method="POST" > 
                 <input type="text" value= '<%=item.id%>' name="id" hidden>
                 <button class="btn btn-primary" type="submit" role="button">ADD TO CART </button>
           
@@ -30,7 +30,7 @@
               <p class="card-text">descrption: <%=item.description%></p>
             </div>
             <p class="lead">
-              <form action="/admin/delete" method="POST" > 
+              <form action="/add-tocart" method="POST" > 
                 <input type="text" value= '<%=item.id%>' name="id" hidden>
                 <button class="btn btn-primary" type="submit" role="button">ADD TO CART </button>
           

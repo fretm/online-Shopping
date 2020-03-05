@@ -5,5 +5,6 @@ const userrouter = require('../controlers/user')
 
 router.get('/user',userrouter.usercontroler)
 
+router.post('/add-tocart',userrouter.addtocart)
 
 module.exports=router;

@@ -1,9 +1,6 @@
 <%- include('fragment/head.ejs')%>
 <%- include('fragment/nav.ejs')%>
       
-
-<BR>
-  <BR>
     <div class="container">
     <div class="jumbotron">
       <h1 class="display-5">Welcome</h1>
@@ -22,7 +19,9 @@
               <form action="/admin/delete" method="POST" > 
                 <input type="text" value= '<%=item.id%>' name="id" hidden>
                 <button class="btn btn-primary" type="submit" role="button">Delete </button>
-          
+                <a href='/admin/update' class="btn btn-primary"  >UPDAT </a>
+                  
+
               </form>
             </div>
             <br>
@@ -37,7 +36,7 @@
               <form action="/admin/delete" method="POST" > 
                 <input type="text" value= '<%=item.id%>' name="id" hidden>
                 <button class="btn btn-primary" type="submit" role="button">Delete </button>
-          
+                <a  href="/admin/update"  class="btn btn-primary">UPDAT </a>
               </form>
             </p>
           </div>

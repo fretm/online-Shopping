@@ -1,3 +1,7 @@
+
+
+const getDb = require('../util/database').getDb;
+
 let data = [{ title: 'forever 21',
 price: '35$',
 image: 'ghddhgdh',
@@ -11,6 +15,7 @@ price: '199$',
 image: '5677',
 description: 'extra large' }];
 
+
 class Product {
   constructor(id,product, price, image, description) {
     this.id = id;
@@ -21,11 +26,28 @@ class Product {
   }
 
   addproduct() {
-      this.id= Math.random()*100
-    data.push(this);
+      //  this.id= Math.random()*100
+      //   data.push(this);
+     
+        const db = getDb()
+        db.collection('products')
+        .insertOne(this)
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
+      
+          
   }
   static showproduct() {
-    return data;
+   
+     
+      return  getDb().collection('products')
+      .find().toArray()
+      
+   
+
+
+
+   
   }
   static deleteproduct(id) {
       
@@ -33,13 +55,11 @@ class Product {
     data= data.filter(item => item.id != id);
    
   }
-
-  static editproduct(id) {
-    for (let key of data) {
-      if (id === key) {
-      }
-    }
+  static findbyid(id){
+    data =data.filter(item => item.id === id)
   }
+  
+  
 }
 
 module.exports = Product;
